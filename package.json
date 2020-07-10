@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "ajax": "0.0.4",
     "axios": "^0.19.2",
+    "lodash.debounce": "^4.0.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

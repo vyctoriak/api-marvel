@@ -34,7 +34,8 @@
 }
 .informations h1 {
   padding-bottom: 24px;
-  color: red;
+  color: #F0141E;
+  font-weight: 400;
 }
 .page-back {
   position: absolute;
@@ -43,7 +44,59 @@
   font-size: 24px;
 }
 .page-back:hover {
-  color: red;
+  color: #F0141E;
   transition: font-size 0.4s, color 0.4s;
   font-size: 32px;
+}
+
+/* comics */
+
+.divisor {
+  margin: 80px 0;
+}
+
+.comics-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.comics-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  /* color: #F0141E; */
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+.comics-item:hover {
+  transition: background-color 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
+  background-color: #d7a6a6;
+}
+
+.comic-poster, .comic-poster img {
+  width: 100%;
+  height: 100%;
+}
+
+.comic-informations {
+  padding: 20px;
+  text-align: center;
+  align-self: center;
+}
+.comic-informations h2 {
+  color: black;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.comic-informations p {
+  color: black;
+  font-weight: 300;
+  font-size: 14px;
 }
