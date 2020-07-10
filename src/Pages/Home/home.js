@@ -90,7 +90,7 @@ function Home() {
          if (searchString.length > 3) {
            getCharacters(searchString);
          }
-      }, 300);
+      }, 500);
     }
     
     debouncedFn();
