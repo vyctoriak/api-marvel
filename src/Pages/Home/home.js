@@ -89,6 +89,9 @@ function Home() {
          let searchString = event.target.value;
          if (searchString.length > 3) {
            getCharacters(searchString);
+         } 
+         if (searchString.length === 0) {
+           getCharacters();
          }
       }, 500);
     }
