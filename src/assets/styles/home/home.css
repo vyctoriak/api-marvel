@@ -56,6 +56,10 @@ nav input {
   width: 100%;
   height: 100%;
 }
+.card-poster img:hover {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 1, 1);
+  transform: scale(1.05);
+}
 
 .card-info {
   width: 100%;

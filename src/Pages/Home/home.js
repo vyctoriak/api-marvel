@@ -14,22 +14,32 @@ function Home() {
   // const limit = 8;
 
   // key de outra conta
-  const key = {
-    public_key: "a426809c0b8fe784902b489148a23319",
-    timestamp: "1594247367214",
-    hash: "84e25fe88a9ef7c89ea1f9ccd0680ac1",
-    limit: "4"
-  }
+  // const key = {
+  //   public_key: "a426809c0b8fe784902b489148a23319",
+  //   timestamp: "1594247367214",
+  //   hash: "84e25fe88a9ef7c89ea1f9ccd0680ac1",
+  //   limit: "4"
+  // }
 
   // https://gateway.marvel.com:443/v1/public/characters/1011334?apikey=a426809c0b8fe784902b489148a23319&ts=1594247367214&hash=84e25fe88a9ef7c89ea1f9ccd0680ac1
 
   // https://gateway.marvel.com/v1/public/characters?offset=0&limit=1&apikey=5aac5bc626f58d061575c2cb8f0e446e&ts=1594251731556&hash=bf688566c0f2c1f5e84773e0dd3141f6
 
-  useEffect(() => {
-    // get personagens
-    api.get(`/v1/public/characters?offset=0&limit=${key.limit}&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`)
-      .then(res => setCharacters(res.data.data.results))
-  }, [key.hash, key.limit, key.public_key, key.timestamp])
+  const mock_info = [
+    {
+      id: 1,
+      name: "Homem-aranha",
+      image: "https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80",
+      description: "Bitten by a radioactive spider, Peter Parker’s arachnid abilities give him amazing powers he uses to help others, while his personal life continues to offer plenty of obstacles.",
+
+    }
+  ]
+
+
+  // useEffect(() => {
+  //   api.get(`/v1/public/characters?offset=0&limit=${key.limit}&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`)
+  //     .then(res => setCharacters(res.data.data.results))
+  // }, [key.hash, key.limit, key.public_key, key.timestamp])
 
   return (
     <>
@@ -44,7 +54,7 @@ function Home() {
     </nav>
     
     <div className="container-characters">
-      {characters && characters.map( item => (
+      {/* {characters && characters.map( item => (
         <Link key={item.id} to={`/characters/${item.id}`}>
           <div className="card">
             <div className="card-poster">
@@ -56,7 +66,26 @@ function Home() {
             </div>
           </div>
         </Link>
+      ))} */}
+
+      {mock_info && mock_info.map( item => (
+        <Link key={item.id} to={`/characters/${item.id}`}>
+          <div className="card">
+            <div className="card-poster">
+              <img 
+              src={item.image}
+              // src={`${item.thumbnail.path}.${item.thumbnail.extension}`} 
+              alt={item.name}/>
+            </div>
+            <div className="card-info">
+              <h3>{item.name}</h3>
+              <i className="fa fa-heart" aria-hidden="true"></i>
+            </div>
+          </div>
+        </Link>
       ))}
+
+
     </div>
     </>
   )

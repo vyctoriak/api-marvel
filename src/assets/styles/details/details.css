@@ -1,0 +1,49 @@
+.container-details {
+  width: 1200px;
+  height: auto;
+  margin: 50px auto;
+}
+
+.info-characters {
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.214);
+  overflow: hidden;
+
+  color: #151515;
+  background-color: white;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  position: relative;
+}
+
+.photo {
+  height: 100%;
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.informations {
+  margin: auto 0;
+  padding: 12px;
+  text-align: center;
+}
+.informations h1 {
+  padding-bottom: 24px;
+  color: red;
+}
+.page-back {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 24px;
+}
+.page-back:hover {
+  color: red;
+  transition: font-size 0.4s, color 0.4s;
+  font-size: 32px;
+}
