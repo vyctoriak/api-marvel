@@ -16,8 +16,6 @@ function Details() {
   const [comics, setComics] = useState([]);
   
   useEffect( () => {
-    console.log(detailsCharacters)
-    console.log(comics)
   }, [detailsCharacters, comics])
   
   useEffect( () => {
@@ -25,9 +23,6 @@ function Details() {
     getComicsById(id);
   }, [id])
 
-  // Minha key
-  // const public_key = '5aac5bc626f58d061575c2cb8f0e446e';
-  
   async function getCharactersById (param) {
     try {
       const response = await api.get(`characters/${param}?&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`)
@@ -40,53 +35,14 @@ function Details() {
 
   async function getComicsById (param) {
     try {
-      // const response = await api.get(api.get(`/v1/public/characters/${param}/comics?format=comic&formatType=comic&orderBy=onsaleDate&limit=10&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`))
       
       const response = await api.get(`characters/${param}/comics?format=comic&formatType=comic&orderBy=onsaleDate&limit=10&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`)
-      console.log( "response:",response);
       const { results } = response.data.data;
       setComics(results);
     } catch (error) {
       console.log(error)
     }
   }
-
-
-
-
-  // key de outra conta
-  // const public_key = 'a426809c0b8fe784902b489148a23319';
-
-  // key da mh conta hotmail
-  // const key = {
-  //   public_key: "86cfff8f9319d4fae2be20a7cd1b2ee1",
-  //   timestamp: "1594345144761",
-  //   hash: "52206ae592ca805795a9fa2340905fcf",
-  // }
-
-
-  // useEffect( () => {
-  //   api.get(`/v1/public/characters/${id}?&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`)
-  //     .then(res => setDetailsCharacters(res.data.data.results))
-  // }, [id, key.public_key, key.timestamp, key.hash])
-  
-  // useEffect( () => {
-  //   api.get(`/v1/public/characters/${id}/comics?format=comic&formatType=comic&orderBy=onsaleDate&limit=10&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`)
-  //   .then( res => setComics(res.data.data.results))
-  // },[id, key.public_key, key.timestamp, key.hash])
-
-  // https://gateway.marvel.com:443/v1/public/characters/1009664/comics?format=comic&formatType=comic&orderBy=onsaleDate&limit=10&apikey=5aac5bc626f58d061575c2cb8f0e446e
-
-  // const mock_info = [
-  //   {
-  //     id: 1,
-  //     name: "Homem-aranha",
-  //     image: "https://images.unsplash.com/photo-1534809027769-b00d750a6bac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2734&q=80",
-  //     description: "Bitten by a radioactive spider, Peter Parker’s arachnid abilities give him amazing powers he uses to help others, while his personal life continues to offer plenty of obstacles.",
-
-  //   }
-  // ]
-
 
   return(
     <div className="container-details">
@@ -142,9 +98,6 @@ function Details() {
 
         </div>
       ))}
-
-      
-
 
     </div>
   )

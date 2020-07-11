@@ -80,6 +80,6 @@ nav input {
   font-size: 24px;
   cursor: pointer;
 }
-.card-info i:hover {
+.card-info i.active {
   color: red;
 }
