@@ -68,7 +68,7 @@ function Home() {
     setLimitOfCharacters(100);
 
     if (tempLimit + 20 < totalOfCharacters) {
-      getCharacters(searchString, 100, tempOffset);
+      getCharacters(searchString, 100, tempOffset, true);
     }
   }
   
