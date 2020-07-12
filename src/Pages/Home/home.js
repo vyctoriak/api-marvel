@@ -25,7 +25,7 @@ function Home() {
     setArrayOfLike(JSON.parse(localStorage.getItem('like')) || {});
   }, [])
 
-  async function getCharacters (param, limit, offset) {
+  async function getCharacters (param, limit, offset, isLoadMore) {
     setLoading(true);
 
     let route = ''
@@ -39,7 +39,11 @@ function Home() {
       const response = await api.get(route)
       const { data } = response.data; 
       setTotalOfCharacters(data.total)
-      setCharacters([].concat(characters, data.results));
+      if (isLoadMore) {
+        setCharacters([].concat(characters, data.results));
+      } else {
+        setCharacters(data.results);
+      }
       setLoading(false);
     } catch (error) {
       console.log(error)
@@ -59,11 +63,11 @@ function Home() {
       tempOffset = tempOffset+100;
     }
 
+    getCharacters(searchString, 100, tempOffset, true);
     setOffsetOfCharacters(tempOffset)
     setLimitOfCharacters(100);
 
     if (tempLimit + 20 < totalOfCharacters) {
-      getCharacters(searchString, 100, tempOffset);
       getCharacters(searchString, 100, tempOffset);
     }
   }
@@ -122,7 +126,9 @@ function Home() {
     <div className="container-characters">
 
       {characters && characters.map( item => (
-        <div key={item.id} className="card">
+        <div 
+        key={item.id} 
+        className="card">
           <Link to={`/characters/${item.id}`}>
             <div className="card-poster">
               <img 
