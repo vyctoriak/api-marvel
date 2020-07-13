@@ -23,3 +23,5 @@ E em seguida:
 ```
 npm start
 ```
+
+Você também pode ver o projeto rodando na URL: https://vigorous-mccarthy-233f0b.netlify.app/
