@@ -30,7 +30,8 @@ function Home() {
 
     let route = ''
     if(param) {
-      route = `characters?name=${param}&orderBy=name&offset=${offset ? offset : offsetOfCharacters}&limit=${limit || limitOfCharacters}&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`
+      route = `characters?nameStartsWith=${param}&orderBy=name&offset=${offset ? offset : offsetOfCharacters}&limit=${limit || limitOfCharacters}&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`
+      console.log(route)
     } else {
       route = `characters?orderBy=name&offset=${offset ? offset : offsetOfCharacters}&limit=${limit|| limitOfCharacters}&apikey=${key.public_key}&ts=${key.timestamp}&hash=${key.hash}`
     }
