@@ -1,30 +1,44 @@
 /* BUSCA */
+h1, h2, p {
+  text-align: center;
+}
 h1 {
   padding-top: 8px;
-  text-align: center;
   font-weight: 300;
 }
+h2 {
+  font-weight: 500;
+}
+
 nav {
-  display: grid;
-  grid-template-columns: 1fr 8fr;
-  align-content: center;
+  display: flex;
+  align-self: center;
+  border-radius: 35px;
+  background-color: #fdecec;
+  width: 70vw;
   height: 60px;
-  width: 100%;
-  margin: 10px 0;
+  margin-top: 40px;
+  margin: 40px auto;
 }
-nav label {
-  width: 100%;
-  height: inherit;
+
+nav img {
+  align-self: flex-start;
+  margin-left: 20px;
+  padding-top: 20px;
 }
-nav label img {
-  width: 100%;
-  height: inherit;
-}
+
 nav input {
-  border: 1px solid #e3e3e3;
-  padding: 4px 8px;
-  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  padding-left: 45px;
+  color: #ff1510;
+  font-weight: 400;
   outline: none;
+  font-size: 16px;
+}
+nav input::placeholder {
+  color: #FF1510;
 }
 
 /* FIM BUSCA */

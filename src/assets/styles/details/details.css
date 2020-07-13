@@ -5,12 +5,10 @@
 }
 
 .info-characters {
-  border-radius: 10px;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.214);
   overflow: hidden;
 
   color: #151515;
-  background-color: white;
+  background-color: #E7F6E7;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -42,11 +40,23 @@
   top: 12px;
   right: 12px;
   font-size: 24px;
+  color: #d8caca;
 }
 .page-back:hover {
   color: #F0141E;
   transition: font-size 0.4s, color 0.4s;
   font-size: 32px;
+}
+
+.comics-and-movies div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.comics-and-movies span {
+  display: flex;
+  align-self: center;
+  align-items: center;
 }
 
 /* comics */
@@ -66,17 +76,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 
-  /* color: #F0141E; */
-  background-color: white;
+  background-color: #E7F6E7;
   margin-bottom: 20px;
-  border-radius: 10px;
   overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 400px;
 }
 .comics-item:hover {
   transition: background-color 0.2s cubic-bezier(0.39, 0.58, 0.57, 1);
-  background-color: #d7a6a6;
 }
 
 .comic-poster, .comic-poster img {
@@ -99,4 +106,20 @@
   color: black;
   font-weight: 300;
   font-size: 14px;
+}
+
+@media (max-width: 1300px) {
+  .comics-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .comics-item {
+    max-width: 350px;
+    height: auto;
+    margin: 10px auto;
+
+    display: flex;
+    flex-direction: column;
+  }
 }

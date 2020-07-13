@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import '../../assets/styles/details/details.css';
 import api from '../../requests/api';
 
+import book from '../../assets/imgs/book.png'
+
 const key = {
   public_key: "5aac5bc626f58d061575c2cb8f0e446e",
   timestamp: "1594395237695",
@@ -51,10 +53,6 @@ function Details() {
         <div key={item.id}>
           <div  className="info-characters">
 
-            <div className="photo">
-                <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name}/>
-            </div>
-
             <div className="informations">
 
             <Link to="/" className="page-back">
@@ -67,12 +65,28 @@ function Details() {
               <p>
                 {item.description}
               </p>
+              <div className="comics-and-movies">
+                <div>
+                  <span>
+                    Quadrinhos
+                  </span>
+                  
+                  <span>
+                    <img src={book} alt="ícone"/>
+                    {item.comics.available}
+                  </span>
+                </div>
+              </div>
             </div>
 
+            <div className="photo">
+                <img src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt={item.name}/>
+            </div>
+         
           </div>
 
         <div className="divisor">
-          <h1>As últimas comics onde você encontra o(a) personagem <strong> {item.name} </strong></h1>
+          <h1>Últimos lançamentos de<strong> {item.name} </strong></h1>
         </div>
 
         <div className="comics-container">

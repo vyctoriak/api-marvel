@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import api from '../../requests/api';
 import '../../assets/styles/home/home.css';
 import debounce from 'lodash/debounce';
+import Logo from '../../assets/imgs/logo.png';
+import Lupa from '../../assets/imgs/Shape.png';
 
 function Home() {
 
@@ -112,14 +114,20 @@ function Home() {
   return (
     <>
     <h1>
-      Digite o nome de um personagem
+      <img src={Logo} alt="Logo Marvel"/>
     </h1>
+    <h2>
+      EXPLORE O UNIVERSO
+    </h2>
+    <p>Mergulhe no domínio deslumbrante de todos os personagens clássicos que você ama
+      - e aquele que você descobrirá em breve!
+    </p>
     <nav>
       <label htmlFor="search">
-        <img src="https://cdn.ome.lt/Lk57ZJ11LTeHJbYUrkOKLE3LNFA=/570x0/smart/uploads/conteudo/fotos/marvel-2_QIq20gY.jpg" alt="Logo Marvel"/>
+        <img src={Lupa} alt="Logo Marvel"/>
       </label>
       <input type="search" name="search" id="search" 
-      onChange={search}
+      onChange={search} placeholder="Procure por heróis"
       />
     </nav>
     
